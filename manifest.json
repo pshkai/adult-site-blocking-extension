@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Never Give Up Site Blocker",
+  "description": "Blocks adult websites and redirects to an encouraging reminder page.",
+  "version": "1.0.0",
+  "permissions": [
+    "alarms",
+    "declarativeNetRequest",
+    "storage",
+    "tabs",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "https://raw.githubusercontent.com/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Never Give Up Site Blocker"
+  },
+  "icons": {
+    "16": "icons/icon16.svg",
+    "48": "icons/icon48.svg",
+    "128": "icons/icon128.svg"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "starter_rules",
+        "enabled": true,
+        "path": "rules/starter-rules.json"
+      }
+    ]
+  }
+}
